@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:kagla-hs"
+
+    - path: "app/Main.hs"
+      component: "kagla-hs:exe:kagla-hs"
+
+    - path: "test"
+      component: "kagla-hs:test:kagla-hs-test"
