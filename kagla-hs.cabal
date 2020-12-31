@@ -15,25 +15,27 @@ maintainer:          convcha@gmail.com
 -- category:
 extra-source-files:  CHANGELOG.md, README.md
 
+common shared-properties
+  build-depends:       base ^>=4.13.0.0 
+  default-language:    Haskell2010
+
 library
+  import:              shared-properties
   exposed-modules:     MyLib
   -- other-modules:
   -- other-extensions:
-  build-depends:       base ^>=4.13.0.0
   hs-source-dirs:      src
-  default-language:    Haskell2010
 
 executable kagla-hs
+  import:              shared-properties
   main-is:             Main.hs
   -- other-modules:
   -- other-extensions:
-  build-depends:       base ^>=4.13.0.0, kagla-hs
+  build-depends:       kagla-hs
   hs-source-dirs:      app
-  default-language:    Haskell2010
 
 test-suite kagla-hs-test
-  default-language:    Haskell2010
+  import:              shared-properties
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             MyLibTest.hs
-  build-depends:       base ^>=4.13.0.0
